@@ -17,7 +17,7 @@ class Date {
     int yyyy;
 
 public:
-    int maxDaysInMonth(int mm) {
+    int maxDaysInMonth(int mm, int yyyy) {
         int maxDays;
         if(mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12){
             maxDays = 31;
@@ -34,7 +34,7 @@ public:
 
     Date (int dd, int mm, int yyyy) {
         int maxDays;
-        maxDays = maxDaysInMonth(mm);
+        maxDays = maxDaysInMonth(mm, yyyy);
 
         if(dd > maxDays) {
             cout << "Превышено количество дней в текущем месяце!\n"
@@ -46,7 +46,7 @@ public:
                     yyyy++;
                     mm = 1;
                 }
-                maxDays = maxDaysInMonth(mm);
+                maxDays = maxDaysInMonth(mm, yyyy);
             }
         }
 
